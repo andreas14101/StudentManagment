@@ -1,3 +1,6 @@
 # StudentManagment
 
-this branch adds the Instructor model and gives Course a relation to said Instructor model although nullable at the start to ensure that all the old data can still be used and when an instructor has been added to all courses then you can change instructor to not be nullable
+this branch changes the name of Grade in Enrollment to FinalGrade.
+
+I chose to make a new enrollment model called Enrollment__V1.1 since it is nondestructive  you still maintain access to the old data from the old version of the Enrollment model while you migrate the data to the new model which makes it possible to release this feature before other services are ready for it, it does require the other services to do so they check both the new and old version when getting grade information,
+but when all enrollments have been moved to use the newer version of the model you can safely drop the old one without having to worry much about loosing data and making your database inconsistent
