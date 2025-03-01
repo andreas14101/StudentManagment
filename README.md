@@ -1,3 +1,3 @@
 # StudentManagment
 
-this branch updates the student model to have a date of birth, I made it nullable to start to ensure that you can still access older data, you will be able to make it not nullable when all students have a birthday added, you could also have added a default date to fill out the column in the database, but that is a bad idea in my opinion since it could have a big impact on existing data
+this branch adds the Instructor model and gives Course a relation to said Instructor model although nullable at the start to ensure that all the old data can still be used and when an instructor has been added to all courses then you can change instructor to not be nullable, you could have a default and just edit it with the correct information after migrating the database
