@@ -1,5 +1,3 @@
 # StudentManagment
 
-this branch changes the name of Grade in Enrollment to FinalGrade.
-
-I chose to make a new enrollment model called Enrollment__V1_1 since it is nondestructive you still maintain access to the old data from the old version of the Enrollment model while you migrate the data to the new model which makes it possible to release this feature before other services are ready for it, it does require the other services to do so they check both the new and old version when getting, adding, updating and deleting grade information, but when all enrollments have been moved to use the newer version of the model you can safely drop the old one without having to worry much about losing data and making your database inconsistent, I could have just renamed it on the original enrollment model, but then other services would have trouble accessing it.
+this branch adds a department model and creates relation between department and instructor for the department head which can only be an instructor
