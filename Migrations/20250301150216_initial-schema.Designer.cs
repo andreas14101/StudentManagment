@@ -12,8 +12,8 @@ using StudentManagment;
 namespace StudentManagment.Migrations
 {
     [DbContext(typeof(StudentManagmentContext))]
-    [Migration("20250301144726_Initial-schema")]
-    partial class Initialschema
+    [Migration("20250301150216_initial-schema")]
+    partial class initialschema
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

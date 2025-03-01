@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace StudentManagment.Migrations
 {
     /// <inheritdoc />
-    public partial class Initialschema : Migration
+    public partial class initialschema : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
