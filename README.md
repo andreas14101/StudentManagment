@@ -1,3 +1,3 @@
 # StudentManagment
 
-this branch contains the initial database schema for the student management system, all ids in the schema use Guid seeing as it does not reveal much about the system like if ids were to be integers
+this branch updates the student model to be able to have a middle name the middle name attribute is nullable because not everyone has a middle name
