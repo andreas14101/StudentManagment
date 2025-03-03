@@ -32,6 +32,9 @@ public class StudentManagmentContext: DbContext
         // creates the relation for Enrollment with Course and Student
         modelBuilder.Entity<Enrollment>().HasOne<Student>(s => s.Student);
         modelBuilder.Entity<Enrollment>().HasOne<Course>(c => c.Course);
+        // creates the relation for Enrollment_v1_1 with Course and Student
+        modelBuilder.Entity<Enrollment_v1_1>().HasOne<Student>(s => s.Student);
+        modelBuilder.Entity<Enrollment_v1_1>().HasOne<Course>(c => c.Course);
         // creates the relation for course with instructor
         modelBuilder.Entity<Course>().HasOne<Instructor>(i => i.Instructor);
     }
