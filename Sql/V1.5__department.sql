@@ -153,76 +153,52 @@ END;
 
 IF NOT EXISTS (
     SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250303093601_rename-grade-to-finalgrade'
+    WHERE [MigrationId] = N'20250303110946_rename-grade-to-finalgrade'
 )
 BEGIN
-    CREATE TABLE [Enrollment_v1_1] (
+    CREATE TABLE [enrollment_v1_1] (
         [Id] uniqueidentifier NOT NULL,
         [StudentId] uniqueidentifier NOT NULL,
         [CourseId] uniqueidentifier NOT NULL,
         [FinalGrade] int NULL,
-        CONSTRAINT [PK_Enrollment_v1_1] PRIMARY KEY ([Id]),
-        CONSTRAINT [FK_Enrollment_v1_1_Courses_CourseId] FOREIGN KEY ([CourseId]) REFERENCES [Courses] ([Id]) ON DELETE CASCADE,
-        CONSTRAINT [FK_Enrollment_v1_1_Students_StudentId] FOREIGN KEY ([StudentId]) REFERENCES [Students] ([Id]) ON DELETE CASCADE
+        CONSTRAINT [PK_enrollment_v1_1] PRIMARY KEY ([Id]),
+        CONSTRAINT [FK_enrollment_v1_1_Courses_CourseId] FOREIGN KEY ([CourseId]) REFERENCES [Courses] ([Id]) ON DELETE CASCADE,
+        CONSTRAINT [FK_enrollment_v1_1_Students_StudentId] FOREIGN KEY ([StudentId]) REFERENCES [Students] ([Id]) ON DELETE CASCADE
     );
 END;
 
 IF NOT EXISTS (
     SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250303093601_rename-grade-to-finalgrade'
+    WHERE [MigrationId] = N'20250303110946_rename-grade-to-finalgrade'
 )
 BEGIN
-    CREATE INDEX [IX_Enrollment_v1_1_CourseId] ON [Enrollment_v1_1] ([CourseId]);
+    CREATE INDEX [IX_enrollment_v1_1_CourseId] ON [enrollment_v1_1] ([CourseId]);
 END;
 
 IF NOT EXISTS (
     SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250303093601_rename-grade-to-finalgrade'
+    WHERE [MigrationId] = N'20250303110946_rename-grade-to-finalgrade'
 )
 BEGIN
-    CREATE INDEX [IX_Enrollment_v1_1_StudentId] ON [Enrollment_v1_1] ([StudentId]);
+    CREATE INDEX [IX_enrollment_v1_1_StudentId] ON [enrollment_v1_1] ([StudentId]);
 END;
 
 IF NOT EXISTS (
     SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250303093601_rename-grade-to-finalgrade'
+    WHERE [MigrationId] = N'20250303110946_rename-grade-to-finalgrade'
 )
 BEGIN
     INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-    VALUES (N'20250303093601_rename-grade-to-finalgrade', N'9.0.2');
+    VALUES (N'20250303110946_rename-grade-to-finalgrade', N'9.0.2');
 END;
 
 IF NOT EXISTS (
     SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250303103810_department'
-)
-BEGIN
-    CREATE TABLE [Departoments] (
-        [Id] uniqueidentifier NOT NULL,
-        [Name] nvarchar(max) NOT NULL,
-        [Dudget] float NOT NULL,
-        [StartDate] date NOT NULL,
-        [DepartmentHeadId] uniqueidentifier NOT NULL,
-        CONSTRAINT [PK_Departoments] PRIMARY KEY ([Id]),
-        CONSTRAINT [FK_Departoments_Instructors_DepartmentHeadId] FOREIGN KEY ([DepartmentHeadId]) REFERENCES [Instructors] ([Id]) ON DELETE CASCADE
-    );
-END;
-
-IF NOT EXISTS (
-    SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250303103810_department'
-)
-BEGIN
-    CREATE INDEX [IX_Departoments_DepartmentHeadId] ON [Departoments] ([DepartmentHeadId]);
-END;
-
-IF NOT EXISTS (
-    SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250303103810_department'
+    WHERE [MigrationId] = N'20250303111345_department'
 )
 BEGIN
     INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-    VALUES (N'20250303103810_department', N'9.0.2');
+    VALUES (N'20250303111345_department', N'9.0.2');
 END;
 
 COMMIT;

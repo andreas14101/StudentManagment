@@ -12,7 +12,7 @@ using StudentManagment;
 namespace StudentManagment.Migrations
 {
     [DbContext(typeof(StudentManagmentContext))]
-    [Migration("20250303103810_department")]
+    [Migration("20250303111345_department")]
     partial class department
     {
         /// <inheritdoc />
@@ -119,7 +119,7 @@ namespace StudentManagment.Migrations
 
                     b.HasIndex("StudentId");
 
-                    b.ToTable("Enrollment_v1_1");
+                    b.ToTable("enrollment_v1_1");
                 });
 
             modelBuilder.Entity("StudentManagment.Models.Instructor", b =>
