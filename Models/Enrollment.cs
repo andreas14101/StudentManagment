@@ -18,5 +18,5 @@ public class Enrollment_v1_1
     public Guid Id { get; set; }
     public Student Student { get; set; }
     public Course Course { get; set; }
-    public int? Grade { get; set; }
+    public int? FinalGrade { get; set; }
 }
