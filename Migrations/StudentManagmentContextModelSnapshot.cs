@@ -104,7 +104,7 @@ namespace StudentManagment.Migrations
                     b.Property<Guid>("CourseId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int?>("Grade")
+                    b.Property<int?>("FinalGrade")
                         .HasColumnType("int");
 
                     b.Property<Guid>("StudentId")
