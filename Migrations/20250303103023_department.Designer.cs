@@ -12,8 +12,8 @@ using StudentManagment;
 namespace StudentManagment.Migrations
 {
     [DbContext(typeof(StudentManagmentContext))]
-    [Migration("20250303093856_rename-grade-to-finalgrade")]
-    partial class renamegradetofinalgrade
+    [Migration("20250303103023_department")]
+    partial class department
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -46,6 +46,32 @@ namespace StudentManagment.Migrations
                     b.HasIndex("InstructorId");
 
                     b.ToTable("Courses");
+                });
+
+            modelBuilder.Entity("StudentManagment.Models.Departoment", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("DepartmentHeadId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<double>("Dudget")
+                        .HasColumnType("float");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateOnly>("StartDate")
+                        .HasColumnType("date");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DepartmentHeadId");
+
+                    b.ToTable("Departoments");
                 });
 
             modelBuilder.Entity("StudentManagment.Models.Enrollment", b =>
@@ -161,6 +187,17 @@ namespace StudentManagment.Migrations
                         .HasForeignKey("InstructorId");
 
                     b.Navigation("Instructor");
+                });
+
+            modelBuilder.Entity("StudentManagment.Models.Departoment", b =>
+                {
+                    b.HasOne("StudentManagment.Models.Instructor", "DepartmentHead")
+                        .WithMany()
+                        .HasForeignKey("DepartmentHeadId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("DepartmentHead");
                 });
 
             modelBuilder.Entity("StudentManagment.Models.Enrollment", b =>
