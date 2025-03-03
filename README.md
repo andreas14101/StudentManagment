@@ -1,3 +1,3 @@
 # StudentManagment
 
-this branch contains the initial schema for state-based
+this branch updates the student model to have a middle name attribute that is nullable
