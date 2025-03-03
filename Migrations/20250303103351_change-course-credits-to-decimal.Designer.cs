@@ -12,7 +12,7 @@ using StudentManagment;
 namespace StudentManagment.Migrations
 {
     [DbContext(typeof(StudentManagmentContext))]
-    [Migration("20250303095905_change-course-credits-to-decimal")]
+    [Migration("20250303103351_change-course-credits-to-decimal")]
     partial class changecoursecreditstodecimal
     {
         /// <inheritdoc />
