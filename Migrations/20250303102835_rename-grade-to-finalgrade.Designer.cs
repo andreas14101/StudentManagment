@@ -12,7 +12,7 @@ using StudentManagment;
 namespace StudentManagment.Migrations
 {
     [DbContext(typeof(StudentManagmentContext))]
-    [Migration("20250303093856_rename-grade-to-finalgrade")]
+    [Migration("20250303102835_rename-grade-to-finalgrade")]
     partial class renamegradetofinalgrade
     {
         /// <inheritdoc />
