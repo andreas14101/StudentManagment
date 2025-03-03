@@ -12,7 +12,7 @@ using StudentManagment;
 namespace StudentManagment.Migrations
 {
     [DbContext(typeof(StudentManagmentContext))]
-    [Migration("20250301160837_department")]
+    [Migration("20250303094153_department")]
     partial class department
     {
         /// <inheritdoc />
@@ -107,7 +107,7 @@ namespace StudentManagment.Migrations
                     b.Property<Guid>("CourseId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int?>("Grade")
+                    b.Property<int?>("FinalGrade")
                         .HasColumnType("int");
 
                     b.Property<Guid>("StudentId")
