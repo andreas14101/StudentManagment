@@ -12,7 +12,7 @@ using StudentManagment;
 namespace StudentManagment.Migrations
 {
     [DbContext(typeof(StudentManagmentContext))]
-    [Migration("20250303095726_department")]
+    [Migration("20250303103023_department")]
     partial class department
     {
         /// <inheritdoc />
