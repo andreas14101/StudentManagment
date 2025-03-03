@@ -1,3 +1,5 @@
 # StudentManagment
 
-this branch adds a department model and sets it up in the database context
+this branch adds a new Course model called Course_V1_1 and a new Enrollment model called Enrollment_v1_1.
+
+the addition of the two new models is to implement a change in the Course model where the credits attribute needed to be changed from an int to a decimal with the precision(5,2), the addition of these two new models makes it so that the change is nondestructive and lets all other services that accessed the database before continue to do so to gather the data they need from the old models, all other services just have to implement the different actions for the new models while migrating to the new models because when all the old data is updated to the new models then we can drop the old models, I could have just changed the credits attribute in the original model but that would have forced us to wait for other services to implement the change before we can release this feature to the users.
