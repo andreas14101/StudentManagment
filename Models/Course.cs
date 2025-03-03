@@ -7,5 +7,6 @@ public class Course
     [Key]
     public Guid Id { get; set; }
     public string Title { get; set; }
+    public Instructor? Instructor { get; set; }
     public int Credits { get; set; }
 }

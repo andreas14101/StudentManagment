@@ -8,6 +8,7 @@ public class StudentManagmentContext: DbContext
     DbSet<Student> Students { get; set; }
     DbSet<Course> Courses { get; set; }
     DbSet<Enrollment> Enrollments { get; set; }
+    DbSet<Instructor> Instructors { get; set; }
     
     
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -31,5 +32,7 @@ public class StudentManagmentContext: DbContext
         // creates the relation for Enrollment with Course and Student
         modelBuilder.Entity<Enrollment>().HasOne<Student>(s => s.Student);
         modelBuilder.Entity<Enrollment>().HasOne<Course>(c => c.Course);
+        // creates the relation for course with instructor
+        modelBuilder.Entity<Course>().HasOne<Instructor>(i => i.Instructor);
     }
 }

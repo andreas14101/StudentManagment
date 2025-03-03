@@ -1,3 +1,4 @@
 # StudentManagment
 
-this branch updates the student model to have a date of birth attribute that is nullable to ensure that there is not missing an attribute on old data, you can change date of birth to not be nullable when all students have a date of birth added, I could have added a default value, but I do not like that as an option.
+this branch adds an Instructor model and updates the Course model to have an Instructor attribute, also edits the DBContext to have a Dbset for Instructor and creates a relation between the Instructors DbSet and Course DbSet.
+the Course attribute Instructor is nullable to start that can be changed when all Courses have an instructor.
