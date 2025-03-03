@@ -90,7 +90,7 @@ namespace StudentManagment.Migrations
 
                     b.HasIndex("StudentId");
 
-                    b.ToTable("Enrollment_v1_1");
+                    b.ToTable("enrollment_v1_1");
                 });
 
             modelBuilder.Entity("StudentManagment.Models.Instructor", b =>

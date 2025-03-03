@@ -8,6 +8,7 @@ public class StudentManagmentContext: DbContext
     DbSet<Student> Students { get; set; }
     DbSet<Course> Courses { get; set; }
     DbSet<Enrollment> Enrollments { get; set; }
+    DbSet<Enrollment_v1_1> enrollment_v1_1 { get; set; }
     DbSet<Instructor> Instructors { get; set; }
     
     
